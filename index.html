@@ -33,7 +33,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#concept" class="text-gray-600 hover:text-accent transition font-medium">Concept</a>
                 <a href="#forfaits" class="text-gray-600 hover:text-accent transition font-medium">Tarifs</a>
-                <a href="#blog" class="text-gray-600 hover:text-accent transition font-medium">Conseils Vendeurs</a>
+                <a href="#blog" class="text-gray-600 hover:text-accent transition font-medium">Conseils</a>
             </div>
             <a href="#estimation" class="bg-brand text-white px-5 py-2 rounded-lg font-semibold hover:bg-brand-light transition shadow-md">
                 Estimer mes économies
@@ -150,68 +150,91 @@
         </div>
     </section>
 
-    <!-- NOUVEAU : Formulaire de qualification / Lead Gen -->
+    <!-- Formulaire de qualification / Lead Gen (COMPLETÉ) -->
     <section id="estimation" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8">
-            <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
                 
                 <!-- Colonne Info -->
-                <div class="md:w-2/5 bg-brand text-white p-10 flex flex-col justify-center">
-                    <h3 class="text-3xl font-bold mb-4">Passez à l'action.</h3>
-                    <p class="text-gray-300 mb-8">Remplissez ce formulaire pour recevoir votre Analyse Comparative de Marché (ACM) lors d'un appel stratégique offert de 15 min.</p>
+                <div class="lg:w-2/5 bg-brand text-white p-10 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-4">Préparons votre vente.</h3>
+                    <p class="text-gray-300 mb-8">Détaillez votre bien pour recevoir votre Analyse Comparative de Marché (ACM) précise lors d'un appel stratégique offert.</p>
                     <ul class="space-y-4">
                         <li class="flex items-center"><span class="text-accent mr-3 text-xl">✓</span> 100% Confidentiel</li>
-                        <li class="flex items-center"><span class="text-accent mr-3 text-xl">✓</span> Sans aucun engagement</li>
-                        <li class="flex items-center"><span class="text-accent mr-3 text-xl">✓</span> Rapide (réponse sous 24h)</li>
+                        <li class="flex items-center"><span class="text-accent mr-3 text-xl">✓</span> Sans engagement</li>
+                        <li class="flex items-center"><span class="text-accent mr-3 text-xl">✓</span> Analyse data-driven</li>
                     </ul>
                 </div>
 
                 <!-- Colonne Formulaire -->
-                <div class="md:w-3/5 bg-white p-10">
-                    <!-- Remplacer "VOTRE_LIEN_ICI" par le lien Formspree -->
-                    <form action="https://formspree.io/f/VOTRE_LIEN_ICI" method="POST" class="space-y-6">
+                <div class="lg:w-3/5 bg-white p-8 md:p-10">
+                    <form action="https://formspree.io/f/VOTRE_LIEN_ICI" method="POST" class="space-y-5">
                         
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Type de bien à vendre</label>
-                            <select name="type_bien" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50 text-gray-700">
-                                <option value="">Sélectionnez...</option>
-                                <option value="Maison">Maison</option>
-                                <option value="Appartement">Appartement</option>
-                                <option value="Terrain">Terrain</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Localisation du bien</label>
-                            <input type="text" name="localisation" placeholder="Ex: Bayonne, Hossegor, Biarritz..." required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Votre plus grand défi</label>
-                            <select name="defi" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50 text-gray-700">
-                                <option value="">Sélectionnez...</option>
-                                <option value="Fixer le bon prix">Trouver le juste prix (Estimer)</option>
-                                <option value="Gérer les acheteurs">Filtrer les "touristes" et les financements</option>
-                                <option value="Gérer les visites">Gérer les visites et la négociation</option>
-                                <option value="Mettre en valeur">Avoir de belles photos et une bonne annonce</option>
-                            </select>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Ligne 1 : Type & Localisation -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                                <input type="email" name="email" placeholder="votre@email.com" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Type de bien *</label>
+                                <select name="type_bien" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50 text-gray-700">
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="Maison">Maison</option>
+                                    <option value="Appartement">Appartement</option>
+                                </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Téléphone</label>
-                                <input type="tel" name="telephone" placeholder="06 XX XX XX XX" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Ville / Secteur *</label>
+                                <input type="text" name="localisation" placeholder="Ex: Bayonne, Hossegor..." required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-4 rounded-xl transition shadow-lg mt-4">
-                            Demander mon analyse offerte
+                        <!-- Ligne 2 : Surface & Pièces -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Surface (m²) *</label>
+                                <input type="number" name="surface" placeholder="Ex: 85" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Nombre de pièces *</label>
+                                <input type="number" name="pieces" placeholder="Ex: 4" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
+                            </div>
+                        </div>
+
+                        <!-- Ligne 3 : Extérieur & État -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Extérieur</label>
+                                <select name="exterieur" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50 text-gray-700">
+                                    <option value="Aucun">Aucun</option>
+                                    <option value="Balcon">Balcon</option>
+                                    <option value="Terrasse">Terrasse</option>
+                                    <option value="Jardin">Jardin</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">État général</label>
+                                <select name="etat" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50 text-gray-700">
+                                    <option value="Bon état">Bon état (Habitable)</option>
+                                    <option value="Refait à neuf">Refait à neuf</option>
+                                    <option value="Rafraîchissement">Rafraîchissement à prévoir</option>
+                                    <option value="Travaux importants">Travaux importants</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Ligne 4 : Contact -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2 border-t border-gray-100">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Email *</label>
+                                <input type="email" name="email" placeholder="votre@email.com" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Téléphone *</label>
+                                <input type="tel" name="telephone" placeholder="06 XX XX XX XX" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none bg-gray-50">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-4 rounded-xl transition shadow-lg mt-2">
+                            Générer mon audit offert
                         </button>
-                        <p class="text-xs text-gray-400 text-center mt-4">Vos données sont sécurisées et ne seront jamais partagées.</p>
                     </form>
                 </div>
                 
@@ -238,13 +261,12 @@
                 <h4 class="text-white font-bold mb-4">Réseau</h4>
                 <ul class="space-y-2 text-gray-400">
                     <li><a href="#" class="hover:text-accent transition">Devenir Coach Partenaire</a></li>
-                    <li><a href="#" class="hover:text-accent transition">Espace Professionnel</a></li>
                     <li><a href="#estimation" class="hover:text-accent transition">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-gray-500 border-t border-gray-800 pt-8">
-            <p>&copy; 2026 ImmoCoach. Tous droits réservés. | <a href="#" class="hover:text-white">Mentions légales</a></p>
+            <p>&copy; 2026 ImmoCoach. Tous droits réservés.</p>
         </div>
     </footer>
 
