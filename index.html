@@ -1,186 +1,209 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coach Immobilier Bayonne | Vendez sans agence au meilleur prix</title>
-<meta name="description" content="Découvrez le coaching immobilier à Bayonne et au Pays Basque. Économisez les frais d'agence, préservez votre plus-value et vendez votre bien immobilier comme un pro."
-    <!-- Chargement de Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Coaching Immobilier Côte Basque | Vendez sans agence</title>
+    <meta name="description" content="Plateforme de coaching immobilier sur la Côte Basque. Gardez 100% de votre plus-value, profitez d'outils pros et d'une gestion multilingue de vos acheteurs.">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* Design System - Startup PropTech */
+        :root {
+            --primary-color: #1e293b; /* Bleu Ardoise */
+            --accent-color: #f59e0b; /* Ambre */
+            --bg-light: #f8fafc;
+            --text-dark: #334155;
+            --text-light: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+        h1, h2, h3 { color: var(--primary-color); }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #d97706; }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        /* Structure de la page */
+        header {
+            background-color: #fff;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.5em; font-weight: 900; color: var(--primary-color); }
+        .logo span { color: var(--accent-color); }
+        
+        .hero {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 { color: #fff; font-size: 2.8em; margin-bottom: 20px; }
+        .hero p { font-size: 1.2em; max-width: 700px; margin: 0 auto 30px; color: #cbd5e1; }
+        
+        .section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2em; }
+        
+        /* Grilles et Cartes */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .card-icon { font-size: 2.5em; margin-bottom: 15px; }
+        
+        /* Tableau comparatif */
+        .comparison { background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 40px; }
+        .comparison table { width: 100%; border-collapse: collapse; }
+        .comparison th, .comparison td { padding: 15px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        .comparison th { background-color: var(--primary-color); color: #fff; }
+        
+        /* Prix */
+        .pricing-card { border: 2px solid #e2e8f0; }
+        .pricing-card.premium { border-color: var(--accent-color); position: relative; }
+        .badge { position: absolute; top: -15px; right: 20px; background: var(--accent-color); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
+        .price { font-size: 2.5em; font-weight: bold; color: var(--primary-color); margin: 20px 0; }
+        
+        /* Footer */
+        footer { background-color: var(--primary-color); color: #94a3b8; text-align: center; padding: 40px 20px; margin-top: 60px; }
+        footer a { color: var(--accent-color); text-decoration: none; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body>
 
-    <!-- Message de confirmation personnalisé (invisible par défaut) -->
-    <div id="success-message" class="fixed top-5 right-5 z-50 transform -translate-y-20 opacity-0 transition-all duration-300 bg-amber-500 text-slate-900 font-bold px-6 py-3 rounded-lg shadow-xl flex items-center space-x-2">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-        <span>Message envoyé avec succès !</span>
-    </div>
-
-    <!-- En-tête -->
-    <header class="bg-slate-900 text-white sticky top-0 z-40 shadow-lg">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                <h1 class="text-2xl font-extrabold tracking-tight">ImmoCoaching <span class="text-amber-500">Bayonne</span></h1>
-            </div>
-            
-            <!-- Navigation Desktop & Mobile -->
-            <nav class="hidden md:flex space-x-8 font-medium">
-                <a href="#forfaits" class="hover:text-amber-400 transition-colors duration-200">Nos Forfaits</a>
-                <a href="#contact" class="hover:text-amber-400 transition-colors duration-200">Contact</a>
-            </nav>
-            <a href="#contact" class="md:hidden bg-amber-500 text-slate-900 px-4 py-2 rounded-lg font-bold text-sm">Contact</a>
-        </div>
+    <header>
+        <div class="logo">ImmoCoach<span>.</span></div>
+        <a href="#contact" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.9em;">Évaluer mes économies</a>
     </header>
 
-    <!-- Section Hero -->
-    <section class="relative bg-slate-900 py-24 lg:py-32 overflow-hidden px-4">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 opacity-90"></div>
-        <div class="relative z-10 max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-                Vendez votre bien à Bayonne <span class="text-amber-500 block sm:inline">sans agence et à moindre coût</span>
-            </h2>
-            <p class="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Reprenez le contrôle de votre vente immobilière. Un accompagnement professionnel, des conseils d'experts et zéro commission d'agence.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#forfaits" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg transition duration-300 text-lg">
-                    Découvrir nos offres
-                </a>
+    <section class="hero">
+        <h1>Vendez sans agence.<br>Gardez 100% de votre plus-value.</h1>
+        <p>L'expertise d'un professionnel, la liberté du particulier. De Bayonne à Hendaye, vendez votre bien immobilier au meilleur prix grâce à notre méthode de coaching innovante.</p>
+        <a href="#contact" class="btn">Prendre un diagnostic gratuit (15 min)</a>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Notre technologie à votre service</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📸</div>
+                <h3>Visibilité Premium</h3>
+                <p>Photos professionnelles, rédaction optimisée SEO et diffusion stratégique pour battre la concurrence sur les portails immobiliers.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Atout International</h3>
+                <p>La Côte Basque attire ! Nous gérons et filtrons vos requêtes en <strong>anglais et en espagnol</strong> pour ne rater aucun acheteur qualifié.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Sécurité & Financement</h3>
+                <p>Fini les touristes de l'immobilier. Nous vous aidons à qualifier la solidité financière de vos acheteurs avant de signer.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section Nos Forfaits -->
-    <section id="forfaits" class="py-24 bg-slate-50 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Nos Forfaits</h3>
-                <p class="text-slate-600 max-w-2xl mx-auto">Des solutions claires et transparentes pour vous accompagner à chaque étape de votre vente immobilière.</p>
+    <section class="section" style="background-color: #fff; border-radius: 12px; padding: 40px;">
+        <h2 class="section-title">Pourquoi notre modèle change la donne ?</h2>
+        <div class="comparison">
+            <table>
+                <tr>
+                    <th>Critères</th>
+                    <th>Agence Traditionnelle</th>
+                    <th>ImmoCoach (Notre MVP)</th>
+                </tr>
+                <tr>
+                    <td>Commission moyenne (pour 400 000€)</td>
+                    <td>~ 20 000 € (5%)</td>
+                    <td><strong>0 € (Forfait fixe)</strong></td>
+                </tr>
+                <tr>
+                    <td>Photos & Mise en valeur</td>
+                    <td>Oui</td>
+                    <td><strong>Oui (Qualité Pro)</strong></td>
+                </tr>
+                <tr>
+                    <td>Liberté et contrôle de la vente</td>
+                    <td>Non (Mandat bloquant)</td>
+                    <td><strong>Total (Vous décidez)</strong></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="section" id="forfaits">
+        <h2 class="section-title">Des forfaits fixes, sans surprise.</h2>
+        <div class="grid">
+            <div class="card pricing-card">
+                <h3>Pack ESSENTIEL</h3>
+                <div class="price">490 €</div>
+                <p>Les fondations pour démarrer seul, mais fort.</p>
+                <ul style="text-align: left; margin: 20px 0; color: #64748b;">
+                    <li>✓ Audit et stratégie de prix</li>
+                    <li>✓ Shooting photo professionnel</li>
+                    <li>✓ Création de l'annonce optimisée</li>
+                    <li>✓ Modèles de documents légaux</li>
+                </ul>
+                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Commencer</a>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-                
-                <!-- Forfait Essentiel -->
-                <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-2xl font-bold text-slate-900 mb-2">Forfait Essentiel</h4>
-                        <p class="text-slate-500 mb-6">Les bases indispensables pour une vente réussie.</p>
-                        <div class="mb-8">
-                            <span class="text-5xl font-extrabold text-slate-900">490 €</span>
-                        </div>
-                        <ul class="space-y-4 mb-8 text-slate-700 font-medium">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Séance photo professionnelle
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Rédaction d'une annonce optimisée
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Conseils personnalisés en Home Staging
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#contact" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-4 rounded-xl transition duration-300">
-                        Choisir l'Essentiel
-                    </a>
-                </div>
-
-                <!-- Forfait Premium -->
-                <div class="bg-slate-900 rounded-2xl p-8 sm:p-10 border border-slate-800 shadow-2xl relative flex flex-col justify-between transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 -mt-4 mr-6">
-                        <span class="bg-amber-500 text-slate-900 text-sm font-bold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-lg">
-                            Recommandé
-                        </span>
-                    </div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-white mb-2">Forfait Premium</h4>
-                        <p class="text-slate-400 mb-6">L'accompagnement total pour une sérénité absolue.</p>
-                        <div class="mb-8">
-                            <span class="text-5xl font-extrabold text-amber-500">990 €</span>
-                        </div>
-                        <ul class="space-y-4 mb-8 text-slate-300 font-medium">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                <span class="text-white font-semibold">Tout le forfait Essentiel inclus</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Coaching intensif pour les visites
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-amber-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Délégation complète des visites
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#contact" class="block w-full text-center bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 rounded-xl transition duration-300 shadow-lg">
-                        Choisir le Premium
-                    </a>
-                </div>
-
+            <div class="card pricing-card premium">
+                <div class="badge">Le plus choisi</div>
+                <h3>Pack PREMIUM</h3>
+                <div class="price">990 €</div>
+                <p>L'accompagnement total jusqu'à la signature.</p>
+                <ul style="text-align: left; margin: 20px 0; color: #64748b;">
+                    <li>✓ <strong>Tout le pack Essentiel</strong></li>
+                    <li>✓ Coaching "Réussir ses visites"</li>
+                    <li>✓ Gestion des requêtes multilingues (EN/ES)</li>
+                    <li>✓ Qualification financière des acheteurs</li>
+                </ul>
+                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Prendre RDV</a>
             </div>
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="py-24 bg-white px-4">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-extrabold text-slate-900 mb-4">Contactez-nous</h3>
-                <p class="text-slate-600">Prêt à vendre votre bien ? Laissez-nous un message et nous vous recontacterons rapidement.</p>
-            </div>
-
-            <div class="bg-slate-50 p-8 sm:p-10 rounded-2xl shadow-sm border border-slate-100">
-                <form id="contact-form" class="space-y-6" onsubmit="submitForm(event)">
-                    <div>
-                        <label for="name" class="block text-sm font-semibold text-slate-900 mb-2">Nom complet</label>
-                        <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all" placeholder="Votre nom">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-slate-900 mb-2">Adresse Email</label>
-                        <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all" placeholder="votre@email.com">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-semibold text-slate-900 mb-2">Votre Message</label>
-                        <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all" placeholder="Décrivez brièvement votre projet immobilier..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition duration-300 shadow-md">
-                        Envoyer le message
-                    </button>
-                </form>
-            </div>
-        </div>
+    <section class="section" id="contact" style="text-align: center;">
+        <h2 class="section-title">Prêt à conserver votre plus-value ?</h2>
+        <p>Discutons de votre projet immobilier sur la Côte Basque lors d'un appel téléphonique gratuit de 15 minutes.</p>
+        <br>
+        <!-- Ici, plus tard, nous mettrons un lien direct vers Calendly ou un formulaire -->
+        <a href="mailto:votre-email@exemple.com" class="btn">✉️ Me contacter par Email</a>
+        <p style="margin-top: 20px;">Ou par téléphone : <strong>06 XX XX XX XX</strong></p>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 px-4 text-center">
-        <div class="max-w-6xl mx-auto flex flex-col items-center">
-            <div class="flex items-center space-x-2 mb-6">
-                <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                <span class="text-xl font-bold text-white">ImmoCoaching <span class="text-slate-500">Bayonne</span></span>
-            </div>
-            <p class="text-sm mb-4">&copy; 2026 ImmoCoaching Bayonne. Tous droits réservés.</p>
-            <p class="text-xs text-slate-500 max-w-lg mx-auto">Service d'accompagnement et de coaching immobilier. Ne se substitue pas à une agence immobilière pour la transaction financière.</p>
-        </div>
+    <footer>
+        <p>ImmoCoach - PropTech de la Côte Basque & Sud Landes.</p>
+        <p style="font-size: 0.9em; margin-top: 15px;">
+            <a href="#">Mentions légales</a> | 
+            Vous êtes un ancien agent immobilier et souhaitez innover ? <a href="#">Rejoignez notre réseau de coachs</a>.
+        </p>
     </footer>
 
-    <!-- Script pour gérer l'interaction du formulaire -->
-    <script>
-        function submitForm(event) {
-            event.preventDefault(); // Empêche le rechargement de la page
-            
-            // Afficher le message de succès
-            const successMsg = document.getElementById('success-message');
-            successMsg.classList.remove('-translate-y-20', 'opacity-0');
-            successMsg.classList.add('translate-y-0', 'opacity-100');
-            
-            // Réinitialiser le formulaire
-            document.getElementById('contact-form').reset();
+</body>
+</html>
