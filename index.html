@@ -1,213 +1,252 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching Immobilier Côte Basque & Sud Landes | Vendez sans agence</title>
-    <meta name="description" content="Plateforme de coaching immobilier sur la Côte Basque et le Sud Landes. Gardez 100% de votre plus-value, profitez d'outils pros et de visites assistées.">
-    <style>
-        /* Design System - Startup PropTech */
-        :root {
-            --primary-color: #1e293b; /* Bleu Ardoise */
-            --accent-color: #f59e0b; /* Ambre */
-            --bg-light: #f8fafc;
-            --text-dark: #334155;
-            --text-light: #94a3b8;
+    <title>ImmoCoach | Vendez sans agence sur la Côte Basque & Sud Landes</title>
+    <meta name="description" content="Plateforme de coaching immobilier. Gardez 100% de votre plus-value, profitez d'outils pros et d'un audit de solvabilité de vos acheteurs.">
+    <!-- Intégration de Tailwind CSS pour un design moderne -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: {
+                        brand: { dark: '#0f172a', DEFAULT: '#1e293b', light: '#334155' },
+                        accent: { DEFAULT: '#f59e0b', hover: '#d97706' }
+                    }
+                }
+            }
         }
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
-        h1, h2, h3 { color: var(--primary-color); }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-        .btn:hover { background-color: #d97706; }
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            padding: 10px 20px;
-            font-size: 0.9em;
-        }
-        
-        /* Structure de la page */
-        header {
-            background-color: #fff;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .logo { font-size: 1.5em; font-weight: 900; color: var(--primary-color); }
-        .logo span { color: var(--accent-color); }
-        
-        .hero {
-            background-color: var(--primary-color);
-            color: #fff;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .hero h1 { color: #fff; font-size: 2.8em; margin-bottom: 20px; }
-        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto 30px; color: #cbd5e1; }
-        
-        .section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 2em; }
-        
-        /* Grilles et Cartes */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .card-icon { font-size: 2.5em; margin-bottom: 15px; }
-        
-        /* Tableau comparatif */
-        .comparison { background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 40px; }
-        .comparison table { width: 100%; border-collapse: collapse; }
-        .comparison th, .comparison td { padding: 15px; text-align: center; border-bottom: 1px solid #e2e8f0; }
-        .comparison th { background-color: var(--primary-color); color: #fff; }
-        
-        /* Prix */
-        .pricing-card { border: 2px solid #e2e8f0; position: relative; display: flex; flex-direction: column; }
-        .pricing-card.premium { border-color: var(--accent-color); transform: scale(1.02); z-index: 1; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .pricing-card.serenite { border-color: #334155; }
-        .badge { position: absolute; top: -15px; right: 20px; background: var(--accent-color); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
-        .badge-dark { background: var(--primary-color); }
-        .price { font-size: 2.5em; font-weight: bold; color: var(--primary-color); margin: 20px 0; }
-        .pricing-features { text-align: left; margin: 20px 0; color: #64748b; list-style: none; padding: 0; flex-grow: 1; }
-        .pricing-features li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-        .pricing-features li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
-        
-        .option-carte { background-color: #f1f5f9; padding: 20px; border-radius: 8px; text-align: center; margin-top: 40px; font-weight: 500; }
-
-        /* Footer */
-        footer { background-color: var(--primary-color); color: #94a3b8; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        footer a { color: var(--accent-color); text-decoration: none; }
-    </style>
+    </script>
 </head>
-<body>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased">
 
-    <header>
-        <div class="logo">ImmoCoach<span>.</span></div>
-        <a href="#contact" class="btn-outline">Évaluer mes économies</a>
-    </header>
-
-    <section class="hero">
-        <h1>Vendez sans agence.<br>Gardez 100% de votre plus-value.</h1>
-        <p>De la Côte Basque au Sud Landes (Hossegor, Capbreton, Tarnos). L'expertise d'un professionnel, la liberté du particulier. Vendez au meilleur prix grâce à notre méthode de coaching innovante.</p>
-        <a href="#contact" class="btn">Prendre un diagnostic gratuit (15 min)</a>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">Notre technologie à votre service</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📸</div>
-                <h3>Visibilité Premium</h3>
-                <p>Photos professionnelles, rédaction optimisée SEO et diffusion stratégique pour battre la concurrence sur les portails immobiliers.</p>
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md fixed w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-brand-dark tracking-tight">
+                ImmoCoach<span class="text-accent">.</span>
             </div>
-            <div class="card">
-                <div class="card-icon">🌍</div>
-                <h3>Atout International</h3>
-                <p>La région attire ! Nous gérons et filtrons vos requêtes en <strong>anglais et en espagnol</strong> pour ne rater aucun acheteur qualifié.</p>
+            <div class="hidden md:flex space-x-8">
+                <a href="#concept" class="text-gray-600 hover:text-accent transition font-medium">Concept</a>
+                <a href="#forfaits" class="text-gray-600 hover:text-accent transition font-medium">Tarifs</a>
+                <a href="#blog" class="text-gray-600 hover:text-accent transition font-medium">Conseils Vendeurs</a>
             </div>
-            <div class="card">
-                <div class="card-icon">🛡️</div>
-                <h3>Sécurité & Financement</h3>
-                <p>Outils légaux fournis (modèle d'offre d'achat, checklist Notaire) et aide à la qualification financière de vos acheteurs.</p>
+            <a href="#contact" class="bg-brand text-white px-5 py-2 rounded-lg font-semibold hover:bg-brand-light transition shadow-md">
+                Estimer mes économies
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section avec Image de fond -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex items-center min-h-[80vh]">
+        <div class="absolute inset-0 z-0">
+            <!-- Image de fond moderne (Maison contemporaine) -->
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80" alt="Villa moderne" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-brand-dark/70"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent font-semibold tracking-wider mb-4 border border-accent/30 backdrop-blur-sm">CÔTE BASQUE & SUD LANDES</span>
+            <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Vendez sans agence.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Gardez votre plus-value.</span>
+            </h1>
+            <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+                L'expertise d'un professionnel, la liberté du particulier. Vendez au meilleur prix grâce à notre méthode de coaching innovante et nos visites assistées.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg shadow-accent/30">
+                    Diagnostic gratuit (15 min)
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="section" id="forfaits">
-        <h2 class="section-title">Des forfaits fixes, sans surprise.</h2>
-        <div class="grid" style="align-items: center;">
+    <!-- Concept Section -->
+    <section id="concept" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-brand-dark mb-4">La PropTech qui change les règles</h2>
+                <p class="text-lg text-gray-500">Ne payez plus 20 000€ de commission pour des services que nous avons automatisés et optimisés.</p>
+            </div>
             
-            <!-- Pack 1 -->
-            <div class="card pricing-card">
-                <h3>Pack ESSENTIEL</h3>
-                <div class="price">490 €</div>
-                <p>Les fondations pour démarrer seul, mais fort.</p>
-                <ul class="pricing-features">
-                    <li>Audit et stratégie de prix</li>
-                    <li>Shooting photo professionnel</li>
-                    <li>Création de l'annonce optimisée</li>
-                    <li>Modèles de documents légaux (Offre, Checklist)</li>
-                </ul>
-                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Commencer</a>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-brand text-white rounded-xl flex items-center justify-center text-2xl mb-6 shadow-md">📸</div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Visibilité Premium</h3>
+                    <p class="text-gray-600">Photos pro HDR, rédaction optimisée SEO et diffusion massive pour dominer les portails immobiliers locaux.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-brand text-white rounded-xl flex items-center justify-center text-2xl mb-6 shadow-md">🌍</div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Force Internationale</h3>
+                    <p class="text-gray-600">Le marché est global. Nous gérons vos contacts et requêtes en anglais et en espagnol pour capter tous les acheteurs.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 bg-brand text-white rounded-xl flex items-center justify-center text-2xl mb-6 shadow-md">🛡️</div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">Audit Financier</h3>
+                    <p class="text-gray-600">Fini les refus de prêt. Nous validons rigoureusement la solvabilité de vos acheteurs post-visite avec nos partenaires.</p>
+                </div>
             </div>
-
-            <!-- Pack 2 -->
-            <div class="card pricing-card premium">
-                <div class="badge">Le plus choisi</div>
-                <h3>Pack PREMIUM</h3>
-                <div class="price">990 €</div>
-                <p>L'accompagnement stratégique total.</p>
-                <ul class="pricing-features">
-                    <li><strong>Tout le pack Essentiel</strong></li>
-                    <li>Coaching "Réussir ses visites"</li>
-                    <li>Gestion des requêtes multilingues (EN/ES)</li>
-                    <li>Qualification financière des acheteurs</li>
-                </ul>
-                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Prendre RDV</a>
-            </div>
-
-            <!-- Pack 3 -->
-            <div class="card pricing-card serenite">
-                <div class="badge badge-dark">Détachement total</div>
-                <h3>Pack SÉRÉNITÉ</h3>
-                <div class="price">1 490 €</div>
-                <p>Tranquillité d'esprit et visites assistées.</p>
-                <ul class="pricing-features">
-                    <li><strong>Tout le pack Premium</strong></li>
-                    <li><strong>2 demi-journées de visites groupées</strong></li>
-                    <li>Animation des visites par votre coach sur place</li>
-                    <li>Création d'un effet de rareté (acheteurs en concurrence)</li>
-                </ul>
-                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box; background-color: var(--primary-color);">Déléguer la pression</a>
-            </div>
-
-        </div>
-
-        <div class="option-carte">
-            💡 <strong>Besoin d'aide ponctuelle ?</strong> Option à la carte : 1 Demi-journée de visites assistées groupées (3h) pour <strong>290 €</strong>.
         </div>
     </section>
 
-    <section class="section" id="contact" style="text-align: center;">
-        <h2 class="section-title">Prêt à conserver votre plus-value ?</h2>
-        <p>Discutons de votre projet immobilier sur la Côte Basque ou le Sud Landes lors d'un appel téléphonique gratuit de 15 minutes.</p>
-        <br>
-        <a href="mailto:votre-email@exemple.com" class="btn">✉️ Me contacter par Email</a>
-        <p style="margin-top: 20px;">Ou par téléphone : <strong>06 XX XX XX XX</strong></p>
+    <!-- Pricing Section -->
+    <section id="forfaits" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-brand-dark mb-16">Des forfaits transparents.</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8 items-center">
+                <!-- Pack 1 -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm relative">
+                    <h3 class="text-xl font-bold text-gray-900">Pack ESSENTIEL</h3>
+                    <div class="my-4"><span class="text-4xl font-extrabold text-brand-dark">490 €</span></div>
+                    <p class="text-gray-500 mb-6 border-b pb-6">Les fondations pour démarrer seul, mais fort.</p>
+                    <ul class="space-y-4 mb-8 text-gray-600">
+                        <li class="flex items-center"><span class="text-accent mr-3 font-bold">✓</span> Audit et stratégie de prix</li>
+                        <li class="flex items-center"><span class="text-accent mr-3 font-bold">✓</span> Shooting photo professionnel</li>
+                        <li class="flex items-center"><span class="text-accent mr-3 font-bold">✓</span> Création de l'annonce optimisée</li>
+                        <li class="flex items-center"><span class="text-accent mr-3 font-bold">✓</span> Modèles légaux (Offre, Checklist)</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-brand-dark text-center font-bold rounded-xl transition">Commencer</a>
+                </div>
+
+                <!-- Pack 2 (Premium) -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-accent shadow-2xl relative transform lg:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase">Le plus choisi</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-2">Pack PREMIUM</h3>
+                    <div class="my-4"><span class="text-5xl font-extrabold text-brand-dark">990 €</span></div>
+                    <p class="text-gray-500 mb-6 border-b pb-6">L'accompagnement stratégique total.</p>
+                    <ul class="space-y-4 mb-8 text-gray-600">
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> <strong>Tout le pack Essentiel</strong></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> Coaching "Réussir ses visites"</li>
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> Requêtes multilingues (EN/ES)</li>
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> <strong>Analyse des offres et audit de solvabilité post-visite</strong></li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-4 px-4 bg-accent hover:bg-accent-hover text-white text-center font-bold rounded-xl transition shadow-lg">Prendre RDV</a>
+                </div>
+
+                <!-- Pack 3 -->
+                <div class="bg-brand-dark rounded-3xl p-8 shadow-xl text-white relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-white text-brand-dark px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase">Délégation</span>
+                    </div>
+                    <h3 class="text-xl font-bold mt-2">Pack SÉRÉNITÉ</h3>
+                    <div class="my-4"><span class="text-4xl font-extrabold">1 490 €</span></div>
+                    <p class="text-gray-400 mb-6 border-b border-gray-700 pb-6">Tranquillité d'esprit maximale.</p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> <strong>Tout le pack Premium</strong></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> <strong>2 demi-journées de visites groupées assistées</strong></li>
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> Création d'un effet de rareté</li>
+                        <li class="flex items-start"><span class="text-accent mr-3 font-bold">✓</span> Détachement émotionnel</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 px-4 bg-white/10 hover:bg-white/20 text-white text-center font-bold rounded-xl transition border border-white/20">Déléguer la pression</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-50 border border-blue-100 rounded-2xl p-6 text-center text-blue-900 max-w-3xl mx-auto">
+                💡 <strong>Besoin d'aide sur le terrain ?</strong> Option : 1 Demi-journée de visites groupées assistées (3h) pour <strong>290 €</strong>.
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>ImmoCoach - PropTech de la Côte Basque & Sud Landes.</p>
-        <p style="font-size: 0.9em; margin-top: 15px;">
-            <a href="#">Mentions légales</a> | 
-            Vous êtes un ancien agent immobilier et souhaitez innover ? <a href="#">Rejoignez notre réseau de coachs</a>.
-        </p>
+    <!-- Section Blog / Ressources (NOUVEAU) -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-4">Ressources Vendeurs</h2>
+                    <p class="text-gray-500">Nos conseils d'experts pour réussir votre transaction au Pays Basque.</p>
+                </div>
+                <a href="#" class="hidden md:block text-accent font-semibold hover:underline">Voir tous les articles →</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1560518884-ce5882228a4b?auto=format&fit=crop&w=800&q=80" alt="Salon immobilier" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-accent uppercase tracking-wider">Estimation</span>
+                        <h3 class="text-xl font-bold text-brand-dark mt-2 mb-3 leading-tight">Pourquoi les estimations en ligne au Pays Basque sont souvent fausses ?</h3>
+                        <p class="text-gray-500 text-sm mb-4">Le marché de Biarritz à Hossegor comporte des micro-marchés que les algorithmes ne maîtrisent pas. Explications.</p>
+                        <a href="#" class="text-brand font-semibold text-sm hover:text-accent">Lire l'article</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f1f8ea53?auto=format&fit=crop&w=800&q=80" alt="Dossier notaire" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-accent uppercase tracking-wider">Juridique</span>
+                        <h3 class="text-xl font-bold text-brand-dark mt-2 mb-3 leading-tight">La checklist ultime avant de signer une offre d'achat</h3>
+                        <p class="text-gray-500 text-sm mb-4">DPE, plan de financement, conditions suspensives : sécurisez votre vente avant le passage chez le notaire.</p>
+                        <a href="#" class="text-brand font-semibold text-sm hover:text-accent">Lire l'article</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1516156008625-3a9d045b112c?auto=format&fit=crop&w=800&q=80" alt="Visite immobilière" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-accent uppercase tracking-wider">Stratégie</span>
+                        <h3 class="text-xl font-bold text-brand-dark mt-2 mb-3 leading-tight">L'art de la visite groupée : créer l'urgence chez l'acheteur</h3>
+                        <p class="text-gray-500 text-sm mb-4">Comment organiser vos visites sur une demi-journée pour obtenir des offres au prix, sans négociation.</p>
+                        <a href="#" class="text-brand font-semibold text-sm hover:text-accent">Lire l'article</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action (Contact) -->
+    <section id="contact" class="py-20 bg-brand-dark text-white text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-6">Prêt à conserver votre plus-value ?</h2>
+            <p class="text-lg text-gray-300 mb-10">Discutons de votre projet immobilier sur la Côte Basque ou le Sud Landes lors d'un appel stratégique offert.</p>
+            <a href="mailto:contact@immocoach.fr" class="inline-block bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg mb-4">
+                ✉️ Contacter un coach
+            </a>
+            <p class="text-gray-400">Ou appelez-nous au : <span class="text-white font-semibold">06 XX XX XX XX</span></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand border-t border-gray-800 pt-16 pb-8 text-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <div class="text-2xl font-extrabold text-white mb-4">ImmoCoach<span class="text-accent">.</span></div>
+                <p class="text-gray-400 max-w-sm">La PropTech qui redonne le pouvoir aux vendeurs sur la Côte Basque et le Sud Landes.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Services</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-accent transition">Coaching Vendeur</a></li>
+                    <li><a href="#" class="hover:text-accent transition">Audit de solvabilité</a></li>
+                    <li><a href="#" class="hover:text-accent transition">Visites assistées</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Réseau</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-accent transition">Devenir Coach Partenaire</a></li>
+                    <li><a href="#" class="hover:text-accent transition">Espace Professionnel</a></li>
+                    <li><a href="#" class="hover:text-accent transition">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-gray-500 border-t border-gray-800 pt-8">
+            <p>&copy; 2026 ImmoCoach. Tous droits réservés. | <a href="#" class="hover:text-white">Mentions légales</a></p>
+        </div>
     </footer>
 
 </body>
